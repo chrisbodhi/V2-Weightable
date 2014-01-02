@@ -1,0 +1,10 @@
+<li>
+  <!-- gravatar_for comes from app/helpers/users_helper.rb -->
+  <%= gravatar_for user, size: 52 %>
+  <!-- link_to in built into Rails -->
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "delete", user, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+  <% end %>
+</li>

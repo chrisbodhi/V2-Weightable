@@ -1,0 +1,15 @@
+<!-- Method 'title' comes from app/helpers/application_helpers.rb -->
+<!-- application.html.erb takes partials and renders them - header, footer, menu bar -->
+<% provide(:title, 'All users') %>
+<h1>All users</h1>
+
+<!-- Pagination link -->
+<%= will_paginate %>
+
+<ul class="users">
+    <!-- Partial rendered from app/views/users/_user.html.erb "Here Rails infers that @users is a list of User objects; moreover, when called with a collection of users, Rails automatically iterates through them and renders each one with the _user.html.erb partial." -->
+    <%= render @users %>
+</ul>
+
+<!-- Pagination link, repeated -->
+<%= will_paginate %>
