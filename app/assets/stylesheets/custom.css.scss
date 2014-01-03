@@ -132,11 +132,6 @@ aside {
   }
 }
 
-.gravatar {
-  float: left;
-  margin-right: 10px;
-}
-
 .stats {
   overflow: auto;
   a {
@@ -215,6 +210,20 @@ footer {
       border-bottom: 1px solid $grayLighter;
     }
   }
+}
+
+/* Goal Posting */
+
+.update-weight {
+  color: $grayMediumLight;
+  font-size: 0.8em;
+  &:hover {
+    color: green;
+  }
+}
+
+.goal-form {
+  display: none;
 }
 
 /* microposts */

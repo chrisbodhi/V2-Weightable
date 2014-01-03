@@ -1,0 +1,6 @@
+<%= form_for(@user) do |f| %>
+  <div class="field">
+    <%= f.text_field :goal, placeholder: "How much are you going to weigh?" %>
+  </div>
+  <%= f.submit "Set goal!" %>
+<% end %>

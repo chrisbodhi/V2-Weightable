@@ -1,7 +1,10 @@
-<%= link_to gravatar_for(current_user, size: 52), current_user %>
+<%= link_to image_tag(current_user.image_url(:thumb).to_s), current_user %>
 <h1>
   <%= current_user.name %>
 </h1>
+<h6>
+  My current goal weight: <%= current_user.goal %>!
+</h6>
 <span>
   <%= link_to "view my profile", current_user %>
 </span>

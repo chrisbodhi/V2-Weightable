@@ -34,6 +34,9 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
+    elsif @user.goal?
+      @user.save
+      redirect_to @user
     else
       render 'edit'
     end
@@ -63,7 +66,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :image, :goal)
     end
 
     # Before filters
